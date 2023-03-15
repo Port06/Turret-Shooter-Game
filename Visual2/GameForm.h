@@ -56,6 +56,29 @@ namespace Visual2 {
 	protected:
 
 	private:
+		//Varibles
+		int extraMenuOpened = 0;
+
+		int buttonWidth = 0;
+		int buttonHeight = 0;
+		int groupBoxWidth = 0;
+		int groupBoxHeight = 0;
+		int groupBoxY = 0;
+		int buttonX = 0;
+		int buttonY = 0;
+		int button2X = 0;
+		int button2Y = 0;
+		int button3X = 0;
+		int button3Y = 0;
+		int label1X = 0;
+		int label2X = 0;
+		int label2Y = 0;
+		int label3X = 0;
+		int label3Y = 0;
+		int pictureBoxesX = 0;
+		int pictureBoxesY = 0;
+	private: System::Windows::Forms::PictureBox^ pictureBox7;
+
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
@@ -80,6 +103,7 @@ namespace Visual2 {
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -87,6 +111,7 @@ namespace Visual2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			this->groupBox2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -103,6 +128,7 @@ namespace Visual2 {
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"1: Buy Turret";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &GameForm::button1_Click);
 			// 
 			// button2
 			// 
@@ -139,6 +165,7 @@ namespace Visual2 {
 			this->pictureBox1->Size = System::Drawing::Size(4000, 4000);
 			this->pictureBox1->TabIndex = 5;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &GameForm::pictureBox1_Click);
 			// 
 			// pictureBox2
 			// 
@@ -237,6 +264,16 @@ namespace Visual2 {
 			this->groupBox2->Text = L"Turrets Owned";
 			this->groupBox2->Enter += gcnew System::EventHandler(this, &GameForm::groupBox2_Enter);
 			// 
+			// pictureBox7
+			// 
+			this->pictureBox7->BackColor = System::Drawing::Color::Gainsboro;
+			this->pictureBox7->Location = System::Drawing::Point(597, 0);
+			this->pictureBox7->Name = L"pictureBox7";
+			this->pictureBox7->Size = System::Drawing::Size(1850, 5000);
+			this->pictureBox7->TabIndex = 14;
+			this->pictureBox7->TabStop = false;
+			this->pictureBox7->Click += gcnew System::EventHandler(this, &GameForm::pictureBox7_Click);
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(13, 34);
@@ -248,6 +285,7 @@ namespace Visual2 {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Controls->Add(this->pictureBox7);
 			this->Controls->Add(this->pictureBox1);
 			this->Font = (gcnew System::Drawing::Font(L"Haettenschweiler", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -256,6 +294,7 @@ namespace Visual2 {
 			this->MinimumSize = System::Drawing::Size(800, 500);
 			this->Name = L"GameForm";
 			this->Text = L"GameForm";
+			this->Load += gcnew System::EventHandler(this, &GameForm::GameForm_Load);
 			this->Resize += gcnew System::EventHandler(this, &GameForm::GameForm_Resize);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
@@ -264,42 +303,82 @@ namespace Visual2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			this->groupBox2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		};
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+
 	private: System::Void GameForm_Resize(System::Object^ sender, System::EventArgs^ e) {
 
-		int buttonWidth = (int)(this->Width * 0.22); // calculate the new width of the button as 20% of the form's width
-		int buttonHeight = (int)(this->Height * 0.14); // calculate the new height of the button as 10% of the form's height
+		if (extraMenuOpened == 0) {
 
-		int groupBoxWidth = (int)(this->Width * 1);
-		int groupBoxHeight = (int)(this->Height * 0.3);
+			buttonWidth = (int)(this->Width * 0.18); // calculate the new width of the button as 20% of the form's width
+			buttonHeight = (int)(this->Height * 0.14); // calculate the new height of the button as 10% of the form's height
 
-		int groupBoxY = (int)(this->Height * 0.7);
+			groupBoxWidth = (int)(this->Width * 1);
+			groupBoxHeight = (int)(this->Height * 0.3);
 
-		int buttonX = (int)(this->Width * 0.125);
-		int buttonY = (int)(this->Height * 0.25);
+			groupBoxY = (int)(this->Height * 0.7);
 
-		int button2X = (int)(this->Width * 0.4);
-		int button2Y = (int)(this->Height * 0.25);
+			buttonX = (int)(this->Width * 0.125);
+			buttonY = (int)(this->Height * 0.25);
 
-		int button3X = (int)(this->Width * 0.675);
-		int button3Y = (int)(this->Height * 0.25);
+			button2X = (int)(this->Width * 0.4);
+			button2Y = (int)(this->Height * 0.25);
 
-		int label1X = (int)(this->Width * 0.2);
+			button3X = (int)(this->Width * 0.675);
+			button3Y = (int)(this->Height * 0.25);
 
-		int label2X = (int)(this->Width * 0.2);
-		int label2Y = (int)(this->Height * 0.22);
+			label1X = (int)(this->Width * 0.2);
 
-		int label3X = (int)(this->Width * 0.2);
-		int label3Y = (int)(this->Height * 0.38);
+			label2X = (int)(this->Width * 0.2);
+			label2Y = (int)(this->Height * 0.22);
 
-		int pictureBoxesX = (int)(this->Width * 0.2);
-		int pictureBoxesY = (int)(this->Height * 0.38);
+			label3X = (int)(this->Width * 0.2);
+			label3Y = (int)(this->Height * 0.38);
+
+			pictureBoxesX = (int)(this->Width * 0.2);
+			pictureBoxesY = (int)(this->Height * 0.38);
+
+			label1->Location = System::Drawing::Point(207, 9);
+
+		}
+		else {
+
+			pictureBox7->Location = System::Drawing::Point(this->Width - 340, 0);
+
+			buttonWidth = (int)(this->Width * 0.22); // calculate the new width of the button as 20% of the form's width
+			buttonHeight = (int)(this->Height * 0.14); // calculate the new height of the button as 10% of the form's height
+
+			groupBoxWidth = (int)(this->Width * 0.75);
+			groupBoxHeight = (int)(this->Height * 0.3);
+
+			groupBoxY = (int)(this->Height * 0.7);
+
+			buttonX = (int)(this->Width * 0.05);
+			buttonY = (int)(this->Height * 0.25);
+
+			button2X = (int)(this->Width * 0.285);
+			button2Y = (int)(this->Height * 0.25);
+
+			button3X = (int)(this->Width * 0.525);
+			button3Y = (int)(this->Height * 0.25);
+
+			label1X = (int)(this->Width * 0.2);
+
+			label2X = (int)(this->Width * 0.2);
+			label2Y = (int)(this->Height * 0.22);
+
+			label3X = (int)(this->Width * 0.2);
+			label3Y = (int)(this->Height * 0.38);
+
+			pictureBoxesX = (int)(this->Width-400 * 0.2);
+			pictureBoxesY = (int)(this->Height * 0.38);
+
+			label1->Location = System::Drawing::Point(137, 9);
+		}
 
 		button1->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
 		button1->Location = System::Drawing::Point(buttonX, buttonY);
@@ -331,22 +410,42 @@ namespace Visual2 {
 		int labelFontSize = (int)(this->Width * 0.05); // calculate the new font size of the label as 5% of the form's width
 		int labelFontSize2 = (int)(this->Width * 0.025);
 
-		if (this->Width > 2000) // if the form's width is greater than 500, scale up the font size
-		{
-			labelFontSize *= 2; // double the font size
-			labelFontSize2 *= 2;
+		if (extraMenuOpened == 1) {
+			if (this->Width > 2000) // if the form's width is greater than 500, scale up the font size
+			{
+				labelFontSize *= 2; // double the font size
+				labelFontSize2 *= 2;
+			}
+		}
+		else {
+			if (this->Width > 2750) // if the form's width is greater than 500, scale up the font size
+			{
+				labelFontSize *= 2; // double the font size
+				labelFontSize2 *= 2;
+			}
 		}
 
-		label1->Font = gcnew System::Drawing::Font(label1->Font->FontFamily, labelFontSize); // set the font of the label to a new font with the calculated font size
-		button1->Font = gcnew System::Drawing::Font(button1->Font->FontFamily, labelFontSize2);
-		button2->Font = gcnew System::Drawing::Font(button2->Font->FontFamily, labelFontSize2);
-		button3->Font = gcnew System::Drawing::Font(button3->Font->FontFamily, labelFontSize2);
+			label1->Font = gcnew System::Drawing::Font(label1->Font->FontFamily, labelFontSize); // set the font of the label to a new font with the calculated font size
+			button1->Font = gcnew System::Drawing::Font(button1->Font->FontFamily, labelFontSize2);
+			button2->Font = gcnew System::Drawing::Font(button2->Font->FontFamily, labelFontSize2);
+			button3->Font = gcnew System::Drawing::Font(button3->Font->FontFamily, labelFontSize2);
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->MinimumSize = System::Drawing::Size(1200, 500);
+	extraMenuOpened = 1;
+	pictureBox7->Show();
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->MinimumSize = System::Drawing::Size(1200, 500);
+	extraMenuOpened = 1;
+	pictureBox7->Show();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->MinimumSize = System::Drawing::Size(1200, 500);
+	extraMenuOpened = 1;
+	pictureBox7->Show();
 }
 private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -355,6 +454,15 @@ private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArg
 private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void pictureBox7_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void GameForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	pictureBox7->Hide();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	extraMenuOpened = 0;
+	pictureBox7->Hide();
 }
 };
 }
