@@ -1,0 +1,5 @@
+C:\Users\Usuari\source\repos\Visual2\Visual2\x64\Debug\Visual2.vcxproj.AssemblyReference.cache
+C:\Users\Usuari\source\repos\Visual2\Visual2\x64\Debug\Visual2.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Usuari\source\repos\Visual2\Visual2\x64\Debug\Visual2.MyForm.resources
+C:\Users\Usuari\source\repos\Visual2\Visual2\x64\Debug\Visual2.vcxproj.GenerateResource.cache
+C:\Users\Usuari\source\repos\Visual2\Visual2\x64\Debug\Visual2.GameForm.resources
