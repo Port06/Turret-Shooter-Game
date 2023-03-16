@@ -57,9 +57,11 @@ namespace Visual2 {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::ToolTip^ key1;
 	private: System::Windows::Forms::PictureBox^ lol;
+	private: System::Windows::Forms::Button^ enterGameButton;
+	private: System::Windows::Forms::Button^ exitGameButton;
 
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -78,7 +80,6 @@ namespace Visual2 {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -87,8 +88,8 @@ namespace Visual2 {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->key1 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->lol = (gcnew System::Windows::Forms::PictureBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->enterGameButton = (gcnew System::Windows::Forms::Button());
+			this->exitGameButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->lol))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -173,48 +174,47 @@ namespace Visual2 {
 			// 
 			// lol
 			// 
-			this->lol->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lol.Image")));
-			this->lol->Location = System::Drawing::Point(0, 0);
+			this->lol->Location = System::Drawing::Point(-8, 0);
 			this->lol->Name = L"lol";
 			this->lol->Size = System::Drawing::Size(4000, 4000);
 			this->lol->TabIndex = 11;
 			this->lol->TabStop = false;
 			// 
-			// button1
+			// enterGameButton
 			// 
-			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->enterGameButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->button1->AutoSize = true;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Impact", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->enterGameButton->AutoSize = true;
+			this->enterGameButton->Font = (gcnew System::Drawing::Font(L"Impact", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(12, 325);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(392, 117);
-			this->button1->TabIndex = 9;
-			this->button1->Text = L"Enter Game";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			this->button1->MouseEnter += gcnew System::EventHandler(this, &MyForm::button1_MouseEnter);
-			this->button1->MouseLeave += gcnew System::EventHandler(this, &MyForm::button1_MouseLeave);
+			this->enterGameButton->Location = System::Drawing::Point(12, 325);
+			this->enterGameButton->Name = L"enterGameButton";
+			this->enterGameButton->Size = System::Drawing::Size(392, 117);
+			this->enterGameButton->TabIndex = 9;
+			this->enterGameButton->Text = L"Enter Game";
+			this->enterGameButton->UseVisualStyleBackColor = true;
+			this->enterGameButton->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->enterGameButton->MouseEnter += gcnew System::EventHandler(this, &MyForm::button1_MouseEnter);
+			this->enterGameButton->MouseLeave += gcnew System::EventHandler(this, &MyForm::button1_MouseLeave);
 			// 
-			// button2
+			// exitGameButton
 			// 
-			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->exitGameButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->button2->AutoSize = true;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Impact", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->exitGameButton->AutoSize = true;
+			this->exitGameButton->Font = (gcnew System::Drawing::Font(L"Impact", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(367, 325);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(392, 117);
-			this->button2->TabIndex = 10;
-			this->button2->Text = L"Exit Game";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
-			this->button2->MouseEnter += gcnew System::EventHandler(this, &MyForm::button2_MouseEnter);
-			this->button2->MouseLeave += gcnew System::EventHandler(this, &MyForm::button2_MouseLeave);
+			this->exitGameButton->Location = System::Drawing::Point(367, 325);
+			this->exitGameButton->Name = L"exitGameButton";
+			this->exitGameButton->Size = System::Drawing::Size(392, 117);
+			this->exitGameButton->TabIndex = 10;
+			this->exitGameButton->Text = L"Exit Game";
+			this->exitGameButton->UseVisualStyleBackColor = true;
+			this->exitGameButton->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			this->exitGameButton->MouseEnter += gcnew System::EventHandler(this, &MyForm::button2_MouseEnter);
+			this->exitGameButton->MouseLeave += gcnew System::EventHandler(this, &MyForm::button2_MouseLeave);
 			// 
 			// MyForm
 			// 
@@ -222,8 +222,8 @@ namespace Visual2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(800, 500);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->exitGameButton);
+			this->Controls->Add(this->enterGameButton);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
@@ -233,6 +233,8 @@ namespace Visual2 {
 			this->MinimumSize = System::Drawing::Size(800, 500);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			this->Activated += gcnew System::EventHandler(this, &MyForm::MyForm_Activated);
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->Resize += gcnew System::EventHandler(this, &MyForm::MyForm_Resize);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->lol))->EndInit();
 			this->ResumeLayout(false);
@@ -251,7 +253,7 @@ namespace Visual2 {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		this->Hide();
-		GameForm^ obj1 = gcnew GameForm;
+		GameForm^ obj1 = gcnew GameForm(this);
 		obj1->ShowDialog();
 
 	}
@@ -305,11 +307,11 @@ namespace Visual2 {
 		int label6Y = (int)(this->Height * 0.62);
 
 
-		button1->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
-		button1->Location = System::Drawing::Point(buttonX, buttonY);
+		enterGameButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		enterGameButton->Location = System::Drawing::Point(buttonX, buttonY);
 
-		button2->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
-		button2->Location = System::Drawing::Point(button2X, button2Y);
+		exitGameButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		exitGameButton->Location = System::Drawing::Point(button2X, button2Y);
 
 		label1->Location = System::Drawing::Point(label1X, label1->Location.Y);
 
@@ -343,5 +345,10 @@ namespace Visual2 {
 		label6->Font = gcnew System::Drawing::Font(label6->Font->FontFamily, label3FontSize);
 
 	}
+private: System::Void MyForm_Activated(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->lol->Image = Image::FromFile("00_assets/background.png");
+}
 };
 }
