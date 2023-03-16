@@ -106,6 +106,14 @@ namespace Visual2 {
 	private: System::Windows::Forms::ListBox^ turretListBox;
 	private: System::Windows::Forms::Label^ selectTurretAndPosicionLabel;
 	private: System::Windows::Forms::ListBox^ selectSpotListBox;
+	private: System::Windows::Forms::Button^ cashButtonSmall;
+
+	private: System::Windows::Forms::Button^ cashButtonMedium;
+	private: System::Windows::Forms::Button^ cashButtonBig;
+	private: System::Windows::Forms::Button^ upgradeButton;
+	private: System::Windows::Forms::Button^ deleteButton;
+	private: System::Windows::Forms::Label^ upgradeAndDeleteLabel;
+
 
 
 		/// <summary>
@@ -134,6 +142,12 @@ namespace Visual2 {
 			this->turretListBox = (gcnew System::Windows::Forms::ListBox());
 			this->selectTurretAndPosicionLabel = (gcnew System::Windows::Forms::Label());
 			this->selectSpotListBox = (gcnew System::Windows::Forms::ListBox());
+			this->cashButtonSmall = (gcnew System::Windows::Forms::Button());
+			this->cashButtonMedium = (gcnew System::Windows::Forms::Button());
+			this->cashButtonBig = (gcnew System::Windows::Forms::Button());
+			this->upgradeButton = (gcnew System::Windows::Forms::Button());
+			this->deleteButton = (gcnew System::Windows::Forms::Button());
+			this->upgradeAndDeleteLabel = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
@@ -316,12 +330,74 @@ namespace Visual2 {
 			this->selectSpotListBox->Size = System::Drawing::Size(183, 174);
 			this->selectSpotListBox->TabIndex = 17;
 			// 
+			// cashButtonSmall
+			// 
+			this->cashButtonSmall->Location = System::Drawing::Point(639, 76);
+			this->cashButtonSmall->Name = L"cashButtonSmall";
+			this->cashButtonSmall->Size = System::Drawing::Size(120, 53);
+			this->cashButtonSmall->TabIndex = 18;
+			this->cashButtonSmall->Text = L"$50";
+			this->cashButtonSmall->UseVisualStyleBackColor = true;
+			// 
+			// cashButtonMedium
+			// 
+			this->cashButtonMedium->Location = System::Drawing::Point(639, 207);
+			this->cashButtonMedium->Name = L"cashButtonMedium";
+			this->cashButtonMedium->Size = System::Drawing::Size(120, 53);
+			this->cashButtonMedium->TabIndex = 19;
+			this->cashButtonMedium->Text = L"$100";
+			this->cashButtonMedium->UseVisualStyleBackColor = true;
+			// 
+			// cashButtonBig
+			// 
+			this->cashButtonBig->Location = System::Drawing::Point(639, 327);
+			this->cashButtonBig->Name = L"cashButtonBig";
+			this->cashButtonBig->Size = System::Drawing::Size(120, 53);
+			this->cashButtonBig->TabIndex = 20;
+			this->cashButtonBig->Text = L"$250";
+			this->cashButtonBig->UseVisualStyleBackColor = true;
+			// 
+			// upgradeButton
+			// 
+			this->upgradeButton->Location = System::Drawing::Point(632, 354);
+			this->upgradeButton->Name = L"upgradeButton";
+			this->upgradeButton->Size = System::Drawing::Size(127, 58);
+			this->upgradeButton->TabIndex = 21;
+			this->upgradeButton->Text = L"Upgrade";
+			this->upgradeButton->UseVisualStyleBackColor = true;
+			// 
+			// deleteButton
+			// 
+			this->deleteButton->Location = System::Drawing::Point(632, 280);
+			this->deleteButton->Name = L"deleteButton";
+			this->deleteButton->Size = System::Drawing::Size(127, 58);
+			this->deleteButton->TabIndex = 22;
+			this->deleteButton->Text = L"Delete";
+			this->deleteButton->UseVisualStyleBackColor = true;
+			// 
+			// upgradeAndDeleteLabel
+			// 
+			this->upgradeAndDeleteLabel->AutoSize = true;
+			this->upgradeAndDeleteLabel->BackColor = System::Drawing::Color::SandyBrown;
+			this->upgradeAndDeleteLabel->Location = System::Drawing::Point(581, 5);
+			this->upgradeAndDeleteLabel->Name = L"upgradeAndDeleteLabel";
+			this->upgradeAndDeleteLabel->Size = System::Drawing::Size(228, 68);
+			this->upgradeAndDeleteLabel->TabIndex = 23;
+			this->upgradeAndDeleteLabel->Text = L"Select a posicion\nand then the action";
+			this->upgradeAndDeleteLabel->Click += gcnew System::EventHandler(this, &GameForm::label2_Click);
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(13, 34);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Snow;
 			this->ClientSize = System::Drawing::Size(782, 453);
+			this->Controls->Add(this->upgradeAndDeleteLabel);
+			this->Controls->Add(this->deleteButton);
+			this->Controls->Add(this->upgradeButton);
+			this->Controls->Add(this->cashButtonBig);
+			this->Controls->Add(this->cashButtonMedium);
+			this->Controls->Add(this->cashButtonSmall);
 			this->Controls->Add(this->selectSpotListBox);
 			this->Controls->Add(this->selectTurretAndPosicionLabel);
 			this->Controls->Add(this->turretListBox);
@@ -458,6 +534,7 @@ namespace Visual2 {
 		selectSpotListBox->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.55);
 
 		selectTurretAndPosicionLabel->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.02);
+		upgradeAndDeleteLabel->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.02);
 
 		buyTurretButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
 		buyTurretButton->Location = System::Drawing::Point(buttonX, buttonY);
@@ -467,6 +544,21 @@ namespace Visual2 {
 
 		getMoneyButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
 		getMoneyButton->Location = System::Drawing::Point(button3X, button3Y);
+
+		cashButtonSmall->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		cashButtonSmall->Location = System::Drawing::Point(this->Width * 0.76, this->Height * 0.1);
+
+		cashButtonMedium->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		cashButtonMedium->Location = System::Drawing::Point(this->Width * 0.76, this->Height * 0.35);
+
+		cashButtonBig->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		cashButtonBig->Location = System::Drawing::Point(this->Width * 0.76, this->Height * 0.6);
+
+		deleteButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		deleteButton->Location = System::Drawing::Point(this->Width * 0.76, this->Height * 0.2);
+
+		upgradeButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		upgradeButton->Location = System::Drawing::Point(this->Width * 0.76, this->Height * 0.36);
 
 		int labelFontSize = (int)(this->Width * 0.05); // calculate the new font size of the label as 5% of the form's width
 		int labelFontSize2 = (int)(this->Width * 0.025);
@@ -493,6 +585,7 @@ namespace Visual2 {
 		turretListBox->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 		selectTurretAndPosicionLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 		selectSpotListBox->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
+		upgradeAndDeleteLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 	}
 
 	private: System::Void GameForm_Resize(System::Object^ sender, System::EventArgs^ e) {
@@ -514,7 +607,13 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	selectTurretAndPosicionLabel->Hide();
 	selectSpotListBox->Hide();
 	//button2 actions
+	upgradeButton->Hide();
+	deleteButton->Hide();
+	upgradeAndDeleteLabel->Hide();
 	//button3 actions
+	cashButtonSmall->Show();
+	cashButtonMedium->Show();
+	cashButtonBig->Show();
 
 	UpdateScreen();
 }
@@ -527,9 +626,15 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	pictureBox7->Show();
 	turretListBox->Hide();
 	selectTurretAndPosicionLabel->Hide();
-	selectSpotListBox->Hide();
 	//button2 actions
+	selectSpotListBox->Show();
+	upgradeButton->Show();
+	deleteButton->Show();
+	upgradeAndDeleteLabel->Show();
 	//button3 actions
+	cashButtonSmall->Hide();
+	cashButtonMedium->Hide();
+	cashButtonBig->Hide();
 
 
 	UpdateScreen();
@@ -545,7 +650,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	selectTurretAndPosicionLabel->Show();
 	selectSpotListBox->Show();
 	//button2 actions
+	upgradeButton->Hide();
+	deleteButton->Hide();
+	upgradeAndDeleteLabel->Hide();
 	//button3 actions
+	cashButtonSmall->Hide();
+	cashButtonMedium->Hide();
+	cashButtonBig->Hide();
 
 
 	UpdateScreen();
@@ -569,8 +680,20 @@ private: System::Void GameForm_Load(System::Object^ sender, System::EventArgs^ e
 	turretListBox->Hide();
 	selectTurretAndPosicionLabel->Hide();
 	selectSpotListBox->Hide();
+	cashButtonSmall->Hide();
+	cashButtonMedium->Hide();
+	cashButtonBig->Hide();
+	upgradeButton->Hide();
+	deleteButton->Hide();
+	upgradeAndDeleteLabel->Hide();
 
 	this->pictureBox1->Image = Image::FromFile("00_assets/background.png");
+
+	this->pictureBox2->Image = Image::FromFile("00_assets/earth_texture.png");
+	this->pictureBox3->Image = Image::FromFile("00_assets/earth_texture.png");
+	this->pictureBox4->Image = Image::FromFile("00_assets/earth_texture.png");
+	this->pictureBox5->Image = Image::FromFile("00_assets/earth_texture.png");
+	this->pictureBox6->Image = Image::FromFile("00_assets/earth_texture.png");
 
 	UpdateScreen();
 
@@ -584,8 +707,16 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 	turretListBox->Hide();
 	selectTurretAndPosicionLabel->Hide();
 	selectSpotListBox->Hide();
+	cashButtonSmall->Hide();
+	cashButtonMedium->Hide();
+	cashButtonBig->Hide();
+	upgradeButton->Hide();
+	deleteButton->Hide();
+	upgradeAndDeleteLabel->Hide();
 
 	UpdateScreen();
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
