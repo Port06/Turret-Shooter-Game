@@ -53,9 +53,13 @@ namespace Visual2 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ buyTurretButton;
+	private: System::Windows::Forms::Button^ upgradeAndDeleteButton;
+	private: System::Windows::Forms::Button^ getMoneyButton;
+	protected:
+
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
@@ -70,6 +74,7 @@ namespace Visual2 {
 	private:
 		//Varibles
 		int extraMenuOpened = 0;
+		int activatedMenuNumber = 0;
 
 		int buttonWidth = 0;
 		int buttonHeight = 0;
@@ -98,6 +103,9 @@ namespace Visual2 {
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::ListBox^ turretListBox;
+	private: System::Windows::Forms::Label^ selectTurretAndPosicionLabel;
+	private: System::Windows::Forms::ListBox^ selectSpotListBox;
 
 
 		/// <summary>
@@ -112,9 +120,9 @@ namespace Visual2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->buyTurretButton = (gcnew System::Windows::Forms::Button());
+			this->upgradeAndDeleteButton = (gcnew System::Windows::Forms::Button());
+			this->getMoneyButton = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
@@ -123,6 +131,9 @@ namespace Visual2 {
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->turretListBox = (gcnew System::Windows::Forms::ListBox());
+			this->selectTurretAndPosicionLabel = (gcnew System::Windows::Forms::Label());
+			this->selectSpotListBox = (gcnew System::Windows::Forms::ListBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
@@ -132,47 +143,47 @@ namespace Visual2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// button1
+			// buyTurretButton
 			// 
-			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->buyTurretButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->button1->Font = (gcnew System::Drawing::Font(L"Haettenschweiler", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->buyTurretButton->Font = (gcnew System::Drawing::Font(L"Haettenschweiler", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(21, 76);
-			this->button1->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(194, 79);
-			this->button1->TabIndex = 2;
-			this->button1->Text = L"1: Buy Turret";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &GameForm::button1_Click);
+			this->buyTurretButton->Location = System::Drawing::Point(21, 76);
+			this->buyTurretButton->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
+			this->buyTurretButton->Name = L"buyTurretButton";
+			this->buyTurretButton->Size = System::Drawing::Size(194, 79);
+			this->buyTurretButton->TabIndex = 2;
+			this->buyTurretButton->Text = L"1: Buy Turret";
+			this->buyTurretButton->UseVisualStyleBackColor = true;
+			this->buyTurretButton->Click += gcnew System::EventHandler(this, &GameForm::button1_Click);
 			// 
-			// button2
+			// upgradeAndDeleteButton
 			// 
-			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->upgradeAndDeleteButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->button2->Location = System::Drawing::Point(271, 76);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(225, 79);
-			this->button2->TabIndex = 3;
-			this->button2->Text = L"2: Upgrade Turret     3: Delete Turret";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &GameForm::button2_Click);
+			this->upgradeAndDeleteButton->Location = System::Drawing::Point(271, 76);
+			this->upgradeAndDeleteButton->Name = L"upgradeAndDeleteButton";
+			this->upgradeAndDeleteButton->Size = System::Drawing::Size(225, 79);
+			this->upgradeAndDeleteButton->TabIndex = 3;
+			this->upgradeAndDeleteButton->Text = L"2: Upgrade Turret     3: Delete Turret";
+			this->upgradeAndDeleteButton->UseVisualStyleBackColor = true;
+			this->upgradeAndDeleteButton->Click += gcnew System::EventHandler(this, &GameForm::button2_Click);
 			// 
-			// button3
+			// getMoneyButton
 			// 
-			this->button3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->getMoneyButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->button3->Location = System::Drawing::Point(552, 76);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(194, 79);
-			this->button3->TabIndex = 4;
-			this->button3->Text = L"4: Gain $50";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &GameForm::button3_Click);
+			this->getMoneyButton->Location = System::Drawing::Point(552, 76);
+			this->getMoneyButton->Name = L"getMoneyButton";
+			this->getMoneyButton->Size = System::Drawing::Size(194, 79);
+			this->getMoneyButton->TabIndex = 4;
+			this->getMoneyButton->Text = L"4: Gain $50";
+			this->getMoneyButton->UseVisualStyleBackColor = true;
+			this->getMoneyButton->Click += gcnew System::EventHandler(this, &GameForm::button3_Click);
 			// 
 			// pictureBox1
 			// 
@@ -270,21 +281,59 @@ namespace Visual2 {
 			this->pictureBox2->TabIndex = 6;
 			this->pictureBox2->TabStop = false;
 			// 
+			// turretListBox
+			// 
+			this->turretListBox->BackColor = System::Drawing::Color::Gainsboro;
+			this->turretListBox->FormattingEnabled = true;
+			this->turretListBox->ItemHeight = 34;
+			this->turretListBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Default Turret", L"Sniper Turret", L"Bomb Turret" });
+			this->turretListBox->Location = System::Drawing::Point(606, 106);
+			this->turretListBox->Name = L"turretListBox";
+			this->turretListBox->Size = System::Drawing::Size(183, 106);
+			this->turretListBox->TabIndex = 15;
+			// 
+			// selectTurretAndPosicionLabel
+			// 
+			this->selectTurretAndPosicionLabel->AutoSize = true;
+			this->selectTurretAndPosicionLabel->BackColor = System::Drawing::Color::SandyBrown;
+			this->selectTurretAndPosicionLabel->Location = System::Drawing::Point(600, 9);
+			this->selectTurretAndPosicionLabel->Name = L"selectTurretAndPosicionLabel";
+			this->selectTurretAndPosicionLabel->Size = System::Drawing::Size(199, 102);
+			this->selectTurretAndPosicionLabel->TabIndex = 16;
+			this->selectTurretAndPosicionLabel->Text = L"Select a class\nand a posicion to\nbuy a turret";
+			// 
+			// selectSpotListBox
+			// 
+			this->selectSpotListBox->BackColor = System::Drawing::Color::Gainsboro;
+			this->selectSpotListBox->FormattingEnabled = true;
+			this->selectSpotListBox->ItemHeight = 34;
+			this->selectSpotListBox->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Spot: 1", L"Spot: 2", L"Spot: 3", L"Spot: 4",
+					L"Spot: 5"
+			});
+			this->selectSpotListBox->Location = System::Drawing::Point(606, 238);
+			this->selectSpotListBox->Name = L"selectSpotListBox";
+			this->selectSpotListBox->Size = System::Drawing::Size(183, 174);
+			this->selectSpotListBox->TabIndex = 17;
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(13, 34);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Snow;
 			this->ClientSize = System::Drawing::Size(782, 453);
+			this->Controls->Add(this->selectSpotListBox);
+			this->Controls->Add(this->selectTurretAndPosicionLabel);
+			this->Controls->Add(this->turretListBox);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox6);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->getMoneyButton);
+			this->Controls->Add(this->upgradeAndDeleteButton);
 			this->Controls->Add(this->pictureBox5);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->buyTurretButton);
 			this->Controls->Add(this->pictureBox7);
 			this->Controls->Add(this->pictureBox1);
 			this->Font = (gcnew System::Drawing::Font(L"Haettenschweiler", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -357,7 +406,7 @@ namespace Visual2 {
 		}
 		else {
 
-			pictureBox7->Location = System::Drawing::Point(this->Width - 340, 0);
+			pictureBox7->Location = System::Drawing::Point(this->Width * 0.9 - 240, 0);
 
 			buttonWidth = (int)(this->Width * 0.22); // calculate the new width of the button as 20% of the form's width
 			buttonHeight = (int)(this->Height * 0.14); // calculate the new height of the button as 10% of the form's height
@@ -402,14 +451,22 @@ namespace Visual2 {
 			pictureBox6->Location = System::Drawing::Point(this->Width * 0.58, groupBoxY);
 		}
 
-		button1->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
-		button1->Location = System::Drawing::Point(buttonX, buttonY);
+		turretListBox->Size = System::Drawing::Size(this->Width * 0.18, this->Height * 0.3);
+		turretListBox->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.25);
 
-		button2->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
-		button2->Location = System::Drawing::Point(button2X, button2Y);
+		selectSpotListBox->Size = System::Drawing::Size(this->Width * 0.18, this->Height * 0.4);
+		selectSpotListBox->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.55);
 
-		button3->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
-		button3->Location = System::Drawing::Point(button3X, button3Y);
+		selectTurretAndPosicionLabel->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.02);
+
+		buyTurretButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		buyTurretButton->Location = System::Drawing::Point(buttonX, buttonY);
+
+		upgradeAndDeleteButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		upgradeAndDeleteButton->Location = System::Drawing::Point(button2X, button2Y);
+
+		getMoneyButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		getMoneyButton->Location = System::Drawing::Point(button3X, button3Y);
 
 		int labelFontSize = (int)(this->Width * 0.05); // calculate the new font size of the label as 5% of the form's width
 		int labelFontSize2 = (int)(this->Width * 0.025);
@@ -430,9 +487,12 @@ namespace Visual2 {
 		}
 
 		label1->Font = gcnew System::Drawing::Font(label1->Font->FontFamily, labelFontSize); // set the font of the label to a new font with the calculated font size
-		button1->Font = gcnew System::Drawing::Font(button1->Font->FontFamily, labelFontSize2);
-		button2->Font = gcnew System::Drawing::Font(button2->Font->FontFamily, labelFontSize2);
-		button3->Font = gcnew System::Drawing::Font(button3->Font->FontFamily, labelFontSize2);
+		buyTurretButton->Font = gcnew System::Drawing::Font(buyTurretButton->Font->FontFamily, labelFontSize2);
+		upgradeAndDeleteButton->Font = gcnew System::Drawing::Font(upgradeAndDeleteButton->Font->FontFamily, labelFontSize2);
+		getMoneyButton->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
+		turretListBox->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
+		selectTurretAndPosicionLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
+		selectSpotListBox->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 	}
 
 	private: System::Void GameForm_Resize(System::Object^ sender, System::EventArgs^ e) {
@@ -443,21 +503,51 @@ namespace Visual2 {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->MinimumSize = System::Drawing::Size(1200, 500);
+	this->MinimumSize = System::Drawing::Size(1200, 600);
+
 	extraMenuOpened = 1;
+	activatedMenuNumber = 3;
+
 	pictureBox7->Show();
+	//button1 actions
+	turretListBox->Hide();
+	selectTurretAndPosicionLabel->Hide();
+	selectSpotListBox->Hide();
+	//button2 actions
+	//button3 actions
+
 	UpdateScreen();
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->MinimumSize = System::Drawing::Size(1200, 500);
+	this->MinimumSize = System::Drawing::Size(1200, 600);
+
 	extraMenuOpened = 1;
+	activatedMenuNumber = 2;
+	//button1 actions
 	pictureBox7->Show();
+	turretListBox->Hide();
+	selectTurretAndPosicionLabel->Hide();
+	selectSpotListBox->Hide();
+	//button2 actions
+	//button3 actions
+
+
 	UpdateScreen();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->MinimumSize = System::Drawing::Size(1200, 500);
+	this->MinimumSize = System::Drawing::Size(1200, 600);
+
 	extraMenuOpened = 1;
+	activatedMenuNumber = 1;
+	//button1 actions
 	pictureBox7->Show();
+	turretListBox->Show();
+	selectTurretAndPosicionLabel->Show();
+	selectSpotListBox->Show();
+	//button2 actions
+	//button3 actions
+
+
 	UpdateScreen();
 }
 private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
@@ -476,6 +566,9 @@ private: System::Void GameForm_Load(System::Object^ sender, System::EventArgs^ e
 	this->Location = obj1->Location;
 
 	pictureBox7->Hide();
+	turretListBox->Hide();
+	selectTurretAndPosicionLabel->Hide();
+	selectSpotListBox->Hide();
 
 	this->pictureBox1->Image = Image::FromFile("00_assets/background.png");
 
@@ -484,8 +577,14 @@ private: System::Void GameForm_Load(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	extraMenuOpened = 0;
+
 	this->MinimumSize = System::Drawing::Size(800, 500);
+
 	pictureBox7->Hide();
+	turretListBox->Hide();
+	selectTurretAndPosicionLabel->Hide();
+	selectSpotListBox->Hide();
+
 	UpdateScreen();
 }
 };
