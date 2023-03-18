@@ -24,6 +24,12 @@
     <ClCompile Include="GameForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="ClassesTorretes.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="TurretsFunctions.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -31,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="GameForm.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="TurretsFunctions.h">
+      <Filter>Archivos de origen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
