@@ -405,7 +405,7 @@ namespace Visual2 {
 			this->cashLabel->BackColor = System::Drawing::Color::SandyBrown;
 			this->cashLabel->Location = System::Drawing::Point(15, 178);
 			this->cashLabel->Name = L"cashLabel";
-			this->cashLabel->Size = System::Drawing::Size(73, 34);
+			this->cashLabel->Size = System::Drawing::Size(74, 34);
 			this->cashLabel->TabIndex = 24;
 			std::string cashString = std::to_string(cash);
 			System::String^ mySystemString = gcnew System::String(cashString.c_str());
@@ -611,6 +611,12 @@ namespace Visual2 {
 		selectTurretAndPosicionLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 		selectSpotListBox->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 		upgradeAndDeleteLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
+
+
+
+		std::string cashString = std::to_string(cash);
+		System::String^ mySystemString = gcnew System::String(cashString.c_str());
+		this->cashLabel->Text = mySystemString;
 	}
 
 	private: System::Void GameForm_Resize(System::Object^ sender, System::EventArgs^ e) {
