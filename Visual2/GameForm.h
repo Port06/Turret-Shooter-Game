@@ -79,6 +79,7 @@ namespace Visual2 {
 
 	private:
 		//Varibles
+
 		int extraMenuOpened = 0;
 		int activatedMenuNumber = 0;
 
@@ -178,7 +179,7 @@ namespace Visual2 {
 			this->buyTurretButton->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->buyTurretButton->Name = L"buyTurretButton";
 			this->buyTurretButton->Size = System::Drawing::Size(194, 79);
-			this->buyTurretButton->TabIndex = 2;
+			this->buyTurretButton->TabIndex = 14;
 			this->buyTurretButton->Text = L"1: Buy Turret";
 			this->buyTurretButton->UseVisualStyleBackColor = true;
 			this->buyTurretButton->Click += gcnew System::EventHandler(this, &GameForm::button1_Click);
@@ -315,6 +316,7 @@ namespace Visual2 {
 			this->turretListBox->Name = L"turretListBox";
 			this->turretListBox->Size = System::Drawing::Size(183, 106);
 			this->turretListBox->TabIndex = 15;
+			this->turretListBox->SelectedIndexChanged += gcnew System::EventHandler(this, &GameForm::turretListBox_SelectedIndexChanged);
 			// 
 			// selectTurretAndPosicionLabel
 			// 
@@ -339,6 +341,7 @@ namespace Visual2 {
 			this->selectSpotListBox->Name = L"selectSpotListBox";
 			this->selectSpotListBox->Size = System::Drawing::Size(183, 174);
 			this->selectSpotListBox->TabIndex = 17;
+			this->selectSpotListBox->SelectedValueChanged += gcnew System::EventHandler(this, &GameForm::selectSpotListBox_SelectedValueChanged);
 			// 
 			// cashButtonSmall
 			// 
@@ -405,11 +408,8 @@ namespace Visual2 {
 			this->cashLabel->BackColor = System::Drawing::Color::SandyBrown;
 			this->cashLabel->Location = System::Drawing::Point(15, 178);
 			this->cashLabel->Name = L"cashLabel";
-			this->cashLabel->Size = System::Drawing::Size(74, 34);
+			this->cashLabel->Size = System::Drawing::Size(0, 34);
 			this->cashLabel->TabIndex = 24;
-			std::string cashString = std::to_string(cash);
-			System::String^ mySystemString = gcnew System::String(cashString.c_str());
-			this->cashLabel->Text = mySystemString;
 			// 
 			// GameForm
 			// 
@@ -419,12 +419,8 @@ namespace Visual2 {
 			this->ClientSize = System::Drawing::Size(782, 453);
 			this->Controls->Add(this->cashLabel);
 			this->Controls->Add(this->upgradeAndDeleteLabel);
-			this->Controls->Add(this->deleteButton);
-			this->Controls->Add(this->upgradeButton);
-			this->Controls->Add(this->cashButtonBig);
 			this->Controls->Add(this->cashButtonMedium);
 			this->Controls->Add(this->cashButtonSmall);
-			this->Controls->Add(this->selectSpotListBox);
 			this->Controls->Add(this->selectTurretAndPosicionLabel);
 			this->Controls->Add(this->turretListBox);
 			this->Controls->Add(this->pictureBox2);
@@ -436,6 +432,10 @@ namespace Visual2 {
 			this->Controls->Add(this->upgradeAndDeleteButton);
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->buyTurretButton);
+			this->Controls->Add(this->selectSpotListBox);
+			this->Controls->Add(this->deleteButton);
+			this->Controls->Add(this->upgradeButton);
+			this->Controls->Add(this->cashButtonBig);
 			this->Controls->Add(this->pictureBox7);
 			this->Controls->Add(this->pictureBox1);
 			this->Font = (gcnew System::Drawing::Font(L"Haettenschweiler", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -461,6 +461,8 @@ namespace Visual2 {
 #pragma endregion
 
 	private: System::Void UpdateScreen(void) {
+
+
 		if (extraMenuOpened == 0) {
 
 			buttonWidth = (int)(this->Width * 0.18); // calculate the new width of the button as 20% of the form's width
@@ -585,6 +587,8 @@ namespace Visual2 {
 		upgradeButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
 		upgradeButton->Location = System::Drawing::Point(this->Width * 0.76, this->Height * 0.78);
 
+		cashLabel->Location = System::Drawing::Point(this->Width * 0.01, this->Height * 0.6);
+
 		int labelFontSize = (int)(this->Width * 0.05); // calculate the new font size of the label as 5% of the form's width
 		int labelFontSize2 = (int)(this->Width * 0.025);
 
@@ -611,6 +615,7 @@ namespace Visual2 {
 		selectTurretAndPosicionLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 		selectSpotListBox->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 		upgradeAndDeleteLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
+		cashLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 
 
 
@@ -752,13 +757,22 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void cashButtonSmall_Click(System::Object^ sender, System::EventArgs^ e) {
-	accionMenu4ObtenerCash(1);
+	cash = cash + accionMenu4ObtenerCash(1);
+	this->cashLabel->Text = cash.ToString() + "$";
 }
 private: System::Void cashButtonMedium_Click(System::Object^ sender, System::EventArgs^ e) {
-	accionMenu4ObtenerCash(2);
+	cash = cash + accionMenu4ObtenerCash(2);
+	this->cashLabel->Text = cash.ToString() + "$";
 }
 private: System::Void cashButtonBig_Click(System::Object^ sender, System::EventArgs^ e) {
-	accionMenu4ObtenerCash(3);
+	cash = cash + accionMenu4ObtenerCash(3);
+	this->cashLabel->Text = cash.ToString() + "$";
+}
+private: System::Void selectSpotListBox_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	String^ selectedItem = selectSpotListBox->SelectedItem->ToString();
+}
+private: System::Void turretListBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	String^ selectedItem = turretListBox->SelectedItem->ToString();
 }
 };
 }

@@ -173,13 +173,13 @@ void accionMenu3MejorarTorreta(int positionGetMenu) {
 int accionMenu4ObtenerCash(int positionGetMenu) {
 
 	switch (positionGetMenu) {
-	case 1: cash = cash + 50;
+	case 1: cash = 50;
 		break;
 
-	case 2: cash = cash + 100;
+	case 2: cash = 100;
 		break;
 		
-	case 3: cash = cash + 250;
+	case 3: cash = 250;
 		break;
 
 	}
