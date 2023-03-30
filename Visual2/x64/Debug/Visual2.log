@@ -7,60 +7,69 @@ C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(7,10): warning C4067: s�
 C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\filesystem(13): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(11,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(12,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\tgmath.h(33): warning UCRT4000: This header does not conform to the C99 standard. C99 functionality is available when compiling in C11 mode or higher (/std:c11). Functionality equivalent to the type-generic functions provided by tgmath.h is available in <ctgmath> when compiling as C++. If compiling in C++17 mode or higher (/std:c++17), this header will automatically include <ctgmath> instead. You can define _CRT_SILENCE_NONCONFORMING_TGMATH_H to acknowledge that you have received this warning.
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(12,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(496,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(499,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(502,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(505,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(508,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(513,69): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(543,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(546,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(549,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(552,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(555,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(558,80): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(558,59): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(559,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(559,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(561,84): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(561,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(563,100): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(563,79): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(564,93): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(564,72): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(576,87): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(576,66): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(579,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(579,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(582,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(582,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(585,84): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(585,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(588,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(588,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(590,81): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(590,60): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(610,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(611,90): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(612,104): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(613,88): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(614,87): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(615,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(616,91): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(617,95): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(618,83): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(670,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(670,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(689,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(689,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(13,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(522,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(525,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(528,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(531,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(534,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(539,69): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(569,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(572,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(575,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(578,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(581,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(584,80): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(584,59): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(585,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(585,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(587,84): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(587,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(591,90): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(591,69): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(596,90): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(596,69): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(600,100): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(600,79): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(601,93): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(601,72): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(607,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(607,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(616,87): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(616,66): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(619,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(619,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(622,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(622,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(625,84): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(625,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(628,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(628,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(630,81): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(630,60): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(650,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(651,90): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(652,104): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(653,88): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(654,87): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(655,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(656,91): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(657,95): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(658,83): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(659,90): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(718,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(718,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(741,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(741,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(830,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
   MyForm.cpp
 C:\Users\Usuari\source\repos\Visual2\Visual2\MyForm.cpp(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\MyForm.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -91,60 +100,69 @@ C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(7,10): warning C4067: s�
 C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\filesystem(13): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(11,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(10,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(12,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\Usuari\source\repos\Visual2\Visual2\ClassesTorretes.cpp(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\tgmath.h(33): warning UCRT4000: This header does not conform to the C99 standard. C99 functionality is available when compiling in C11 mode or higher (/std:c11). Functionality equivalent to the type-generic functions provided by tgmath.h is available in <ctgmath> when compiling as C++. If compiling in C++17 mode or higher (/std:c++17), this header will automatically include <ctgmath> instead. You can define _CRT_SILENCE_NONCONFORMING_TGMATH_H to acknowledge that you have received this warning.
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(12,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(496,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(499,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(502,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(505,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(508,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(513,69): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(543,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(546,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(549,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(552,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(555,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(558,80): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(558,59): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(559,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(559,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(561,84): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(561,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(563,100): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(563,79): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(564,93): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(564,72): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(576,87): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(576,66): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(579,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(579,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(582,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(582,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(585,84): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(585,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(588,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(588,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(590,81): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(590,60): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(610,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(611,90): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(612,104): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(613,88): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(614,87): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(615,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(616,91): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(617,95): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(618,83): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(670,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(670,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(689,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(689,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(13,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(522,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(525,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(528,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(531,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(534,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(539,69): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(569,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(572,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(575,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(578,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(581,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(584,80): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(584,59): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(585,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(585,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(587,84): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(587,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(591,90): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(591,69): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(596,90): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(596,69): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(600,100): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(600,79): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(601,93): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(601,72): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(607,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(607,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(616,87): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(616,66): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(619,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(619,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(622,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(622,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(625,84): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(625,63): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(628,85): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(628,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(630,81): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(630,60): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(650,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(651,90): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(652,104): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(653,88): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(654,87): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(655,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(656,91): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(657,95): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(658,83): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(659,90): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(718,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(718,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(741,88): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(741,67): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Usuari\source\repos\Visual2\Visual2\GameForm.h(830,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
 C:\Users\Usuari\source\repos\Visual2\Visual2\MyForm.h(340,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Usuari\source\repos\Visual2\Visual2\MyForm.h(341,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Usuari\source\repos\Visual2\Visual2\MyForm.h(342,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos

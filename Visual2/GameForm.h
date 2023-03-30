@@ -7,9 +7,12 @@
 #include <string>;
 #include <stdexcept>;
 #include <filesystem>;
+#include <msclr/marshal_cppstd.h>;
 
 #include "ClassesTorretes.cpp";
 #include "TurretsFunctions.h";
+
+using namespace msclr::interop;
 
 
 namespace Visual2 {
@@ -104,7 +107,13 @@ namespace Visual2 {
 		int pictureBoxesX = 0;
 		int pictureBoxesY = 0;
 
-		int cash = 75;
+		int listSpotBox = 0;
+
+		int^ cash = gcnew int(75);
+		int^ ptr = cash;
+		int cashGameForm = static_cast<int>(cash);
+
+		bool canBuyTurret;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox7;
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
@@ -123,6 +132,7 @@ namespace Visual2 {
 	private: System::Windows::Forms::Button^ deleteButton;
 	private: System::Windows::Forms::Label^ upgradeAndDeleteLabel;
 	private: System::Windows::Forms::Label^ cashLabel;
+	private: System::Windows::Forms::Button^ confirmBuyTurret;
 
 
 
@@ -159,6 +169,7 @@ namespace Visual2 {
 			this->deleteButton = (gcnew System::Windows::Forms::Button());
 			this->upgradeAndDeleteLabel = (gcnew System::Windows::Forms::Label());
 			this->cashLabel = (gcnew System::Windows::Forms::Label());
+			this->confirmBuyTurret = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
@@ -316,7 +327,6 @@ namespace Visual2 {
 			this->turretListBox->Name = L"turretListBox";
 			this->turretListBox->Size = System::Drawing::Size(183, 106);
 			this->turretListBox->TabIndex = 15;
-			this->turretListBox->SelectedIndexChanged += gcnew System::EventHandler(this, &GameForm::turretListBox_SelectedIndexChanged);
 			// 
 			// selectTurretAndPosicionLabel
 			// 
@@ -341,7 +351,6 @@ namespace Visual2 {
 			this->selectSpotListBox->Name = L"selectSpotListBox";
 			this->selectSpotListBox->Size = System::Drawing::Size(183, 174);
 			this->selectSpotListBox->TabIndex = 17;
-			this->selectSpotListBox->SelectedValueChanged += gcnew System::EventHandler(this, &GameForm::selectSpotListBox_SelectedValueChanged);
 			// 
 			// cashButtonSmall
 			// 
@@ -411,12 +420,29 @@ namespace Visual2 {
 			this->cashLabel->Size = System::Drawing::Size(0, 34);
 			this->cashLabel->TabIndex = 24;
 			// 
+			// confirmBuyTurret
+			// 
+			this->confirmBuyTurret->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->confirmBuyTurret->Font = (gcnew System::Drawing::Font(L"Haettenschweiler", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->confirmBuyTurret->Location = System::Drawing::Point(597, 375);
+			this->confirmBuyTurret->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
+			this->confirmBuyTurret->Name = L"confirmBuyTurret";
+			this->confirmBuyTurret->Size = System::Drawing::Size(194, 79);
+			this->confirmBuyTurret->TabIndex = 25;
+			this->confirmBuyTurret->Text = L"Confirm Purchase";
+			this->confirmBuyTurret->UseVisualStyleBackColor = true;
+			this->confirmBuyTurret->Click += gcnew System::EventHandler(this, &GameForm::confirmBuyTurret_Click);
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(13, 34);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Snow;
 			this->ClientSize = System::Drawing::Size(782, 453);
+			this->Controls->Add(this->confirmBuyTurret);
 			this->Controls->Add(this->cashLabel);
 			this->Controls->Add(this->upgradeAndDeleteLabel);
 			this->Controls->Add(this->cashButtonMedium);
@@ -560,11 +586,25 @@ namespace Visual2 {
 
 		selectSpotListBox->Size = System::Drawing::Size(this->Width * 0.18, this->Height * 0.32);
 
+		if (listSpotBox == 1) {
+
+			selectSpotListBox->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.5);
+
+		}
+		else {
+
+			selectSpotListBox->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.22);
+
+		}
+
 		selectTurretAndPosicionLabel->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.02);
 		upgradeAndDeleteLabel->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.02);
 
 		buyTurretButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
 		buyTurretButton->Location = System::Drawing::Point(buttonX, buttonY);
+
+		confirmBuyTurret->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
+		confirmBuyTurret->Location = System::Drawing::Point(this->Width * 0.76, this->Height * 0.8);
 
 		upgradeAndDeleteButton->Size = System::Drawing::Size(buttonWidth, buttonHeight); // set the size of the button to the new calculated size
 		upgradeAndDeleteButton->Location = System::Drawing::Point(button2X, button2Y);
@@ -616,12 +656,15 @@ namespace Visual2 {
 		selectSpotListBox->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 		upgradeAndDeleteLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 		cashLabel->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
+		confirmBuyTurret->Font = gcnew System::Drawing::Font(getMoneyButton->Font->FontFamily, labelFontSize2);
 
 
 
-		std::string cashString = std::to_string(cash);
+		std::string cashString = std::to_string(cashGameForm);
 		System::String^ mySystemString = gcnew System::String(cashString.c_str());
 		this->cashLabel->Text = mySystemString;
+
+		cashGameForm = static_cast<int>(cash);
 	}
 
 	private: System::Void GameForm_Resize(System::Object^ sender, System::EventArgs^ e) {
@@ -642,6 +685,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	turretListBox->Hide();
 	selectTurretAndPosicionLabel->Hide();
 	selectSpotListBox->Hide();
+	confirmBuyTurret->Hide();
 	//button2 actions
 	upgradeButton->Hide();
 	deleteButton->Hide();
@@ -658,10 +702,14 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 	extraMenuOpened = 1;
 	activatedMenuNumber = 2;
+	listSpotBox = 2;
+
+
 	//button1 actions
 	pictureBox7->Show();
 	turretListBox->Hide();
 	selectTurretAndPosicionLabel->Hide();
+	confirmBuyTurret->Hide();
 	//button2 actions
 	selectSpotListBox->Show();
 	upgradeButton->Show();
@@ -681,11 +729,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 	extraMenuOpened = 1;
 	activatedMenuNumber = 1;
+	listSpotBox = 1;
+
+
 	//button1 actions
 	pictureBox7->Show();
 	turretListBox->Show();
 	selectTurretAndPosicionLabel->Show();
 	selectSpotListBox->Show();
+	confirmBuyTurret->Show();
 	selectSpotListBox->Location = System::Drawing::Point(this->Width * 0.78, this->Height * 0.5);
 	//button2 actions
 	upgradeButton->Hide();
@@ -724,6 +776,7 @@ private: System::Void GameForm_Load(System::Object^ sender, System::EventArgs^ e
 	upgradeButton->Hide();
 	deleteButton->Hide();
 	upgradeAndDeleteLabel->Hide();
+	confirmBuyTurret->Hide();
 
 	this->pictureBox1->Image = Image::FromFile("00_assets/background.png");
 
@@ -751,28 +804,44 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 	upgradeButton->Hide();
 	deleteButton->Hide();
 	upgradeAndDeleteLabel->Hide();
+	confirmBuyTurret->Hide();
 
 	UpdateScreen();
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void cashButtonSmall_Click(System::Object^ sender, System::EventArgs^ e) {
-	cash = cash + accionMenu4ObtenerCash(1);
-	this->cashLabel->Text = cash.ToString() + "$";
+	accionMenu4ObtenerCash(ptr, 1);
+	cashGameForm = static_cast<int>(cash);
+	this->cashLabel->Text = cashGameForm.ToString() + "$";
 }
 private: System::Void cashButtonMedium_Click(System::Object^ sender, System::EventArgs^ e) {
-	cash = cash + accionMenu4ObtenerCash(2);
-	this->cashLabel->Text = cash.ToString() + "$";
+	accionMenu4ObtenerCash(ptr, 2);
+	cashGameForm = static_cast<int>(cash);
+	this->cashLabel->Text = cashGameForm.ToString() + "$";
 }
 private: System::Void cashButtonBig_Click(System::Object^ sender, System::EventArgs^ e) {
-	cash = cash + accionMenu4ObtenerCash(3);
-	this->cashLabel->Text = cash.ToString() + "$";
+	accionMenu4ObtenerCash(ptr, 3);
+	cashGameForm = static_cast<int>(cash);
+	this->cashLabel->Text = cashGameForm.ToString() + "$";
 }
-private: System::Void selectSpotListBox_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	String^ selectedItem = selectSpotListBox->SelectedItem->ToString();
-}
-private: System::Void turretListBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	String^ selectedItem = turretListBox->SelectedItem->ToString();
+private: System::Void confirmBuyTurret_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	if (turretListBox->SelectedItem != NULL) {
+
+		System::String^ turretBuyInfo = turretListBox->SelectedItem->ToString();
+		System::String^ spotBuyInfo = selectSpotListBox->SelectedItem->ToString();
+
+		canBuyTurret = accionMenu1ComprarTorreta(turretBuyInfo, spotBuyInfo, ptr);
+		cashGameForm = static_cast<int>(cash);
+
+		this->cashLabel->Text = canBuyTurret + "";
+
+	}
+	else{
+		
+	}
+
 }
 };
 }

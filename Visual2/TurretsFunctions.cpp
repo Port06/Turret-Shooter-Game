@@ -8,12 +8,13 @@
 #include <tgmath.h>;
 
 #include "ClassesTorretes.cpp";
+#include "TurretsFunctions.h"
 
 using namespace std;
 
 const int tamanyArray = 10;
 DefaultTurret* mapaTorretesArray[tamanyArray];
-int cash = 75;
+int cash = 0;
 
 int checkNameTurretCreation(int namePosicionTurret, string DefaultName) {
 
@@ -30,9 +31,9 @@ int checkNameTurretCreation(int namePosicionTurret, string DefaultName) {
 	return namePosicionTurret;
 };
 
-void accionMenu1ComprarTorreta() {
+bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int^ cash) {
 
-	if (cash >= 25) {
+	if (*cash >= 25) {
 		int accionMenu = 1;
 
 		while (accionMenu != 0)
@@ -62,12 +63,13 @@ void accionMenu1ComprarTorreta() {
 					string turretName = DefaultName + to_string(namePosicionTurret);
 
 					DefaultTurret* a = new DefaultTurret(turretName);
-					if (a->getPriceBuyTurret() > cash) {
+					if (a->getPriceBuyTurret() > *cash) {
 						mapaTorretesArray[posicionDeInteracionArray] = NULL;
 					}
 					else {
 						mapaTorretesArray[posicionDeInteracionArray] = a;
-						cash = cash - 25;
+						*cash = *cash - 25;
+						return 1;
 					}
 					break;
 				}
@@ -85,12 +87,13 @@ void accionMenu1ComprarTorreta() {
 					string turretName = "SniperTurret" + to_string(namePosicionTurret);
 
 					DefaultTurret* b = new SniperTurret(turretName);
-					if (b->getPriceBuyTurret() > cash) {
+					if (b->getPriceBuyTurret() > *cash) {
 						mapaTorretesArray[posicionDeInteracionArray] = NULL;
 					}
 					else {
 						mapaTorretesArray[posicionDeInteracionArray] = b;
-						cash = cash - 30;
+						*cash = *cash - 30;
+						return 1;
 					}
 					break;
 				}
@@ -108,12 +111,13 @@ void accionMenu1ComprarTorreta() {
 					string turretName = "BombTurret" + to_string(namePosicionTurret);
 
 					DefaultTurret* c = new BombTurret(turretName);
-					if (c->getPriceBuyTurret() > cash) {
+					if (c->getPriceBuyTurret() > *cash) {
 						mapaTorretesArray[posicionDeInteracionArray] = NULL;
 					}
 					else {
 						mapaTorretesArray[posicionDeInteracionArray] = c;
-						cash = cash - 40;
+						*cash = *cash - 40;
+						return 1;
 					}
 					break;
 				}
@@ -126,10 +130,12 @@ void accionMenu1ComprarTorreta() {
 			}
 
 			accionMenu = 0;
+			return 0;
 		}
 	}
 	else {
 		/*cout << "No tiene dinero para comprar ninguna de las torretas propuestas!\n";*/
+		return 0;
 	}
 }
 
@@ -170,19 +176,17 @@ void accionMenu3MejorarTorreta(int positionGetMenu) {
 	}
 }
 
-int accionMenu4ObtenerCash(int positionGetMenu) {
-
+void accionMenu4ObtenerCash(int^ cash, int positionGetMenu)
+{
 	switch (positionGetMenu) {
-	case 1: cash = 50;
+	case 1: *cash = *cash + 50;
 		break;
 
-	case 2: cash = 100;
+	case 2: *cash = *cash + 100;
 		break;
-		
-	case 3: cash = 250;
+
+	case 3: *cash = *cash + 250;
 		break;
 
 	}
-
-	return cash;
 }
