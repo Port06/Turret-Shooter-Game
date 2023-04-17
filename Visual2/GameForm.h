@@ -831,11 +831,36 @@ private: System::Void confirmBuyTurret_Click(System::Object^ sender, System::Eve
 
 		System::String^ turretBuyInfo = turretListBox->SelectedItem->ToString();
 		System::String^ spotBuyInfo = selectSpotListBox->SelectedItem->ToString();
+		int spotBuyInfoInt = spotBuyInfo[6];
+		
 
 		canBuyTurret = accionMenu1ComprarTorreta(turretBuyInfo, spotBuyInfo, ptr);
 		cashGameForm = static_cast<int>(cash);
+		this->cashLabel->Text = cashGameForm.ToString() + "$";
 
-		this->cashLabel->Text = canBuyTurret + "";
+		if (canBuyTurret == 1) {
+			switch (spotBuyInfoInt) {
+			case 49:
+				this->pictureBox2->Image = Image::FromFile("00_assets/shooter.png");
+				break;
+			case 50:
+
+				this->pictureBox3->Image = Image::FromFile("00_assets/basic.png");
+				break;
+			case 51:
+
+				this->pictureBox4->Image = Image::FromFile("00_assets/basic.png");
+				break;
+			case 52:
+
+				this->pictureBox5->Image = Image::FromFile("00_assets/basic.png");
+				break;
+			case 53:
+
+				this->pictureBox6->Image = Image::FromFile("00_assets/basic.png");
+				break;
+			}
+		}
 
 	}
 	else{

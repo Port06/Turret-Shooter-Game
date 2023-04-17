@@ -12,7 +12,7 @@
 
 using namespace std;
 
-const int tamanyArray = 10;
+const int tamanyArray = 5;
 DefaultTurret* mapaTorretesArray[tamanyArray];
 int cash = 0;
 
@@ -45,7 +45,7 @@ bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int
 					posicionDeInteracionArray = i;
 					break;
 				}
-				if (mapaTorretesArray[9] != NULL) {
+				if (mapaTorretesArray[tamanyArray-1] != NULL) {
 					accionMenu = 5;
 				}
 			}
