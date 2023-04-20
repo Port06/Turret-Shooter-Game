@@ -109,7 +109,7 @@ namespace Visual2 {
 
 		int listSpotBox = 0;
 
-		int^ cash = gcnew int(75);
+		int^ cash = gcnew int(500);
 		int^ ptr = cash;
 		int cashGameForm = static_cast<int>(cash);
 
@@ -263,6 +263,7 @@ namespace Visual2 {
 			this->pictureBox5->Location = System::Drawing::Point(463, 327);
 			this->pictureBox5->Name = L"pictureBox5";
 			this->pictureBox5->Size = System::Drawing::Size(115, 114);
+			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox5->TabIndex = 9;
 			this->pictureBox5->TabStop = false;
 			this->pictureBox5->Click += gcnew System::EventHandler(this, &GameForm::pictureBox5_Click);
@@ -276,6 +277,7 @@ namespace Visual2 {
 			this->pictureBox4->Location = System::Drawing::Point(312, 327);
 			this->pictureBox4->Name = L"pictureBox4";
 			this->pictureBox4->Size = System::Drawing::Size(115, 114);
+			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox4->TabIndex = 8;
 			this->pictureBox4->TabStop = false;
 			this->pictureBox4->Click += gcnew System::EventHandler(this, &GameForm::pictureBox4_Click);
@@ -289,6 +291,7 @@ namespace Visual2 {
 			this->pictureBox6->Location = System::Drawing::Point(616, 327);
 			this->pictureBox6->Name = L"pictureBox6";
 			this->pictureBox6->Size = System::Drawing::Size(115, 114);
+			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox6->TabIndex = 10;
 			this->pictureBox6->TabStop = false;
 			this->pictureBox6->Click += gcnew System::EventHandler(this, &GameForm::pictureBox6_Click);
@@ -302,6 +305,7 @@ namespace Visual2 {
 			this->pictureBox3->Location = System::Drawing::Point(156, 327);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(115, 114);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox3->TabIndex = 7;
 			this->pictureBox3->TabStop = false;
 			// 
@@ -314,6 +318,7 @@ namespace Visual2 {
 			this->pictureBox2->Location = System::Drawing::Point(2, 327);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(115, 114);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox2->TabIndex = 6;
 			this->pictureBox2->TabStop = false;
 			// 
@@ -322,7 +327,10 @@ namespace Visual2 {
 			this->turretListBox->BackColor = System::Drawing::Color::Gainsboro;
 			this->turretListBox->FormattingEnabled = true;
 			this->turretListBox->ItemHeight = 34;
-			this->turretListBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Default Turret", L"Sniper Turret", L"Bomb Turret" });
+			this->turretListBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) {
+				L"1. Default Turret", L"2. Sniper Turret",
+					L"3. Bomb Turret"
+			});
 			this->turretListBox->Location = System::Drawing::Point(606, 106);
 			this->turretListBox->Name = L"turretListBox";
 			this->turretListBox->Size = System::Drawing::Size(183, 106);
@@ -832,32 +840,62 @@ private: System::Void confirmBuyTurret_Click(System::Object^ sender, System::Eve
 		System::String^ turretBuyInfo = turretListBox->SelectedItem->ToString();
 		System::String^ spotBuyInfo = selectSpotListBox->SelectedItem->ToString();
 		int spotBuyInfoInt = spotBuyInfo[6];
-		
+		int turretBuyInfoInt = turretBuyInfo[0];
 
 		canBuyTurret = accionMenu1ComprarTorreta(turretBuyInfo, spotBuyInfo, ptr);
 		cashGameForm = static_cast<int>(cash);
 		this->cashLabel->Text = cashGameForm.ToString() + "$";
 
 		if (canBuyTurret == 1) {
-			switch (spotBuyInfoInt) {
+
+			String^ imageName = "";
+			String^ imagePath = "";
+
+			switch (turretBuyInfoInt) {
 			case 49:
-				this->pictureBox2->Image = Image::FromFile("00_assets/shooter.png");
+
+				imageName = "basic.png";
+				imagePath = "00_assets/" + imageName;
 				break;
 			case 50:
 
-				this->pictureBox3->Image = Image::FromFile("00_assets/basic.png");
+				imageName = "shooter.png";
+				imagePath = "00_assets/" + imageName;
 				break;
 			case 51:
 
-				this->pictureBox4->Image = Image::FromFile("00_assets/basic.png");
+				imageName = "supercanon.png";
+				imagePath = "00_assets/" + imageName;
+				break;
+			}
+
+			switch (spotBuyInfoInt) {
+			case 49:
+
+				// load the image from the file and assign it to the Image property of the PictureBox control
+				pictureBox2->Image = Image::FromFile(imagePath);
+
+				break;
+			case 50:
+
+				// load the image from the file and assign it to the Image property of the PictureBox control
+				pictureBox3->Image = Image::FromFile(imagePath);
+
+				break;
+			case 51:
+
+				// load the image from the file and assign it to the Image property of the PictureBox control
+				pictureBox4->Image = Image::FromFile(imagePath);
 				break;
 			case 52:
 
-				this->pictureBox5->Image = Image::FromFile("00_assets/basic.png");
+				// load the image from the file and assign it to the Image property of the PictureBox control
+				pictureBox5->Image = Image::FromFile(imagePath);
 				break;
 			case 53:
 
-				this->pictureBox6->Image = Image::FromFile("00_assets/basic.png");
+				// load the image from the file and assign it to the Image property of the PictureBox control
+				pictureBox6->Image = Image::FromFile(imagePath);
 				break;
 			}
 		}

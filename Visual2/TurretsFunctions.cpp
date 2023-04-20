@@ -6,11 +6,14 @@
 #include <chrono>;
 #include <thread>;
 #include <tgmath.h>;
+#include <windows.h>;
+#using <System.Windows.Forms.dll>
 
 #include "ClassesTorretes.cpp";
 #include "TurretsFunctions.h"
 
 using namespace std;
+using namespace System::Windows::Forms;
 
 const int tamanyArray = 5;
 DefaultTurret* mapaTorretesArray[tamanyArray];
@@ -33,7 +36,7 @@ int checkNameTurretCreation(int namePosicionTurret, string DefaultName) {
 
 bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int^ cash) {
 
-	if (*cash >= 25) {
+	if (*cash >= 25 && mapaTorretesArray[Spot[6]-49] == NULL) {
 		int accionMenu = 1;
 
 		while (accionMenu != 0)
@@ -134,7 +137,13 @@ bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int
 		}
 	}
 	else {
-		/*cout << "No tiene dinero para comprar ninguna de las torretas propuestas!\n";*/
+
+		System::String^ text = "Error: You do not have enough money or the spot is already taken!";
+		System::String^ caption = "Error Message";
+		MessageBoxButtons buttons = MessageBoxButtons::OK;
+		MessageBoxIcon icon = MessageBoxIcon::Error;
+		MessageBox::Show(text, caption, buttons, icon);
+
 		return 0;
 	}
 }
@@ -160,13 +169,13 @@ void accionMenu3MejorarTorreta(int positionGetMenu) {
 
 	if (mapaTorretesArray[posicionDeInteracionArray] != NULL) {
 		if (mapaTorretesArray[posicionDeInteracionArray]->getLvl() * mapaTorretesArray[posicionDeInteracionArray]->getPriceLevelUpTurret() <= cash
-			&& mapaTorretesArray[posicionDeInteracionArray]->getLvl() < 5) {
+			&& mapaTorretesArray[posicionDeInteracionArray]->getLvl() < 3) {
 			cash = cash - mapaTorretesArray[posicionDeInteracionArray]->getLvl()
 				* mapaTorretesArray[posicionDeInteracionArray]->getPriceLevelUpTurret();
 			mapaTorretesArray[posicionDeInteracionArray]->LvlUp();
 		}
 		else {
-			if (mapaTorretesArray[posicionDeInteracionArray]->getLvl() < 5) {
+			if (mapaTorretesArray[posicionDeInteracionArray]->getLvl() < 3) {
 				/*cout << "No tienes dinero suficiente para mejorar la torreta\n";*/
 			}
 			else {
