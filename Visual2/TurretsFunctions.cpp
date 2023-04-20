@@ -23,33 +23,31 @@ int checkNameTurretCreation(int namePosicionTurret, string DefaultName) {
 
 	string checkTurretNameCreating = DefaultName + to_string(namePosicionTurret);
 
-	for (int j = 0; j < 10; j++) {
-		if (mapaTorretesArray[j] != NULL) {
-			if (checkTurretNameCreating == mapaTorretesArray[j]->getName()) {
-				namePosicionTurret++;
-				namePosicionTurret = checkNameTurretCreation(namePosicionTurret, DefaultName);
-			}
-		}
-	}
 	return namePosicionTurret;
 };
 
-bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int^ cash) {
+bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ spot, int^ cash) {
 
-	if (*cash >= 25 && mapaTorretesArray[Spot[6]-49] == NULL) {
-		int accionMenu = 1;
+	if (*cash >= 25 && mapaTorretesArray[spot[6]-49] == NULL) {
+		int accionMenu = Turret[0]-48;
 
 		while (accionMenu != 0)
 		{
 			int posicionDeInteracionArray = 0;
 
-			for (int i = 0; i < 11; i++) {
-				if (mapaTorretesArray[i] == NULL) {
-					posicionDeInteracionArray = i;
+			for (int i = 0; i < 5; i++) {
+				if (mapaTorretesArray[spot[6]-49] == NULL) {
+					posicionDeInteracionArray = spot[6]-49;
 					break;
 				}
-				if (mapaTorretesArray[tamanyArray-1] != NULL) {
-					accionMenu = 5;
+				else {
+
+					System::String^ text = "Error: The spot is already taken!";
+					System::String^ caption = "Error Message";
+					MessageBoxButtons buttons = MessageBoxButtons::OK;
+					MessageBoxIcon icon = MessageBoxIcon::Error;
+					MessageBox::Show(text, caption, buttons, icon);
+
 				}
 			}
 
@@ -61,7 +59,7 @@ bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int
 				if (mapaTorretesArray[posicionDeInteracionArray] == NULL) {
 
 					string DefaultName = "DefaultTurret";
-					namePosicionTurret = checkNameTurretCreation(0, DefaultName);
+					namePosicionTurret = checkNameTurretCreation(spot[6]-49, DefaultName);
 
 					string turretName = DefaultName + to_string(namePosicionTurret);
 
@@ -85,7 +83,7 @@ bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int
 				if (mapaTorretesArray[posicionDeInteracionArray] == NULL) {
 
 					string DefaultName = "SniperTurret";
-					namePosicionTurret = checkNameTurretCreation(0, DefaultName);
+					namePosicionTurret = checkNameTurretCreation(spot[6]-49, DefaultName);
 
 					string turretName = "SniperTurret" + to_string(namePosicionTurret);
 
@@ -109,7 +107,7 @@ bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int
 				if (mapaTorretesArray[posicionDeInteracionArray] == NULL) {
 
 					string DefaultName = "BombTurret";
-					namePosicionTurret = checkNameTurretCreation(0, DefaultName);
+					namePosicionTurret = checkNameTurretCreation(spot[6]-49, DefaultName);
 
 					string turretName = "BombTurret" + to_string(namePosicionTurret);
 
@@ -138,7 +136,7 @@ bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int
 	}
 	else {
 
-		System::String^ text = "Error: You do not have enough money or the spot is already taken!";
+		System::String^ text = "Error: You do not have enough money!";
 		System::String^ caption = "Error Message";
 		MessageBoxButtons buttons = MessageBoxButtons::OK;
 		MessageBoxIcon icon = MessageBoxIcon::Error;
@@ -148,40 +146,69 @@ bool accionMenu1ComprarTorreta(System::String^ Turret, System::String^ Spot, int
 	}
 }
 
-void accionMenu2EliminarTorreta(int positionGetMenu) {
-	int posicionDeInteracionArray = positionGetMenu;
+bool accionMenu2EliminarTorreta(System::String^ spot, int^ cash) {
+	int posicionDeInteracionArray = spot[6]-49;
 
 	if (mapaTorretesArray[posicionDeInteracionArray] != NULL) {
-		cash = cash + (mapaTorretesArray[posicionDeInteracionArray]->getLvl() * mapaTorretesArray[posicionDeInteracionArray]->getPriceLevelUpTurret() / 2);
+		*cash = *cash + (mapaTorretesArray[posicionDeInteracionArray]->getLvl() * mapaTorretesArray[posicionDeInteracionArray]->getPriceLevelUpTurret() / 2);
+
+		mapaTorretesArray[posicionDeInteracionArray] = NULL;
+		return 1;
 	}
-	for (int i = posicionDeInteracionArray; i < 10; i++) {
-		if (i == tamanyArray - 1) {
-			mapaTorretesArray[i] = NULL;
-		}
-		else {
-			mapaTorretesArray[i] = mapaTorretesArray[i + 1];
-		}
+	else {
+
+		System::String^ text = "Error: This spot has no turret to delete!";
+		System::String^ caption = "Error Message";
+		MessageBoxButtons buttons = MessageBoxButtons::OK;
+		MessageBoxIcon icon = MessageBoxIcon::Error;
+		MessageBox::Show(text, caption, buttons, icon);
+		return 0;
 	}
+	
 }
 
-void accionMenu3MejorarTorreta(int positionGetMenu) {
-	int posicionDeInteracionArray = positionGetMenu;
+bool accionMenu3MejorarTorreta(System::String^ spot, int^ cash) {
+	int posicionDeInteracionArray = spot[6]-49;
 
 	if (mapaTorretesArray[posicionDeInteracionArray] != NULL) {
-		if (mapaTorretesArray[posicionDeInteracionArray]->getLvl() * mapaTorretesArray[posicionDeInteracionArray]->getPriceLevelUpTurret() <= cash
+		if (mapaTorretesArray[posicionDeInteracionArray]->getLvl() * mapaTorretesArray[posicionDeInteracionArray]->getPriceLevelUpTurret() <= *cash
 			&& mapaTorretesArray[posicionDeInteracionArray]->getLvl() < 3) {
-			cash = cash - mapaTorretesArray[posicionDeInteracionArray]->getLvl()
+			*cash = *cash - mapaTorretesArray[posicionDeInteracionArray]->getLvl()
 				* mapaTorretesArray[posicionDeInteracionArray]->getPriceLevelUpTurret();
 			mapaTorretesArray[posicionDeInteracionArray]->LvlUp();
+			return 1;
 		}
 		else {
 			if (mapaTorretesArray[posicionDeInteracionArray]->getLvl() < 3) {
-				/*cout << "No tienes dinero suficiente para mejorar la torreta\n";*/
+				
+				System::String^ text = "Error: You do not have enough money to upgrade the turret!";
+				System::String^ caption = "Error Message";
+				MessageBoxButtons buttons = MessageBoxButtons::OK;
+				MessageBoxIcon icon = MessageBoxIcon::Error;
+				MessageBox::Show(text, caption, buttons, icon);
+
+				return 0;
 			}
 			else {
-				/*cout << "La torreta ya es de nivel maximo\n";*/
+				
+				System::String^ text = "Error: Turret is already lvl max!";
+				System::String^ caption = "Error Message";
+				MessageBoxButtons buttons = MessageBoxButtons::OK;
+				MessageBoxIcon icon = MessageBoxIcon::Error;
+				MessageBox::Show(text, caption, buttons, icon);
+
+				return 0;
 			}
 		}
+	}
+	else {
+
+		System::String^ text = "Error: No turret here!";
+		System::String^ caption = "Error Message";
+		MessageBoxButtons buttons = MessageBoxButtons::OK;
+		MessageBoxIcon icon = MessageBoxIcon::Error;
+		MessageBox::Show(text, caption, buttons, icon);
+
 	}
 }
 
@@ -198,4 +225,16 @@ void accionMenu4ObtenerCash(int^ cash, int positionGetMenu)
 		break;
 
 	}
+}
+
+string valueTurretBuyInfo(System::String^ spot) {
+
+	return mapaTorretesArray[spot[6] - 49]->getName();
+
+}
+
+int valueTurretLvlInfo(System::String^ spot) {
+
+	return mapaTorretesArray[spot[6] - 49]->getLvl();
+
 }

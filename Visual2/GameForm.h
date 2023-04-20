@@ -12,8 +12,6 @@
 #include "ClassesTorretes.cpp";
 #include "TurretsFunctions.h";
 
-using namespace msclr::interop;
-
 
 namespace Visual2 {
 
@@ -398,6 +396,7 @@ namespace Visual2 {
 			this->upgradeButton->TabIndex = 21;
 			this->upgradeButton->Text = L"Upgrade";
 			this->upgradeButton->UseVisualStyleBackColor = true;
+			this->upgradeButton->Click += gcnew System::EventHandler(this, &GameForm::upgradeButton_Click);
 			// 
 			// deleteButton
 			// 
@@ -407,6 +406,7 @@ namespace Visual2 {
 			this->deleteButton->TabIndex = 22;
 			this->deleteButton->Text = L"Delete";
 			this->deleteButton->UseVisualStyleBackColor = true;
+			this->deleteButton->Click += gcnew System::EventHandler(this, &GameForm::deleteButton_Click);
 			// 
 			// upgradeAndDeleteLabel
 			// 
@@ -450,7 +450,6 @@ namespace Visual2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Snow;
 			this->ClientSize = System::Drawing::Size(782, 453);
-			this->Controls->Add(this->confirmBuyTurret);
 			this->Controls->Add(this->cashLabel);
 			this->Controls->Add(this->upgradeAndDeleteLabel);
 			this->Controls->Add(this->cashButtonMedium);
@@ -466,10 +465,11 @@ namespace Visual2 {
 			this->Controls->Add(this->upgradeAndDeleteButton);
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->buyTurretButton);
+			this->Controls->Add(this->cashButtonBig);
+			this->Controls->Add(this->confirmBuyTurret);
 			this->Controls->Add(this->selectSpotListBox);
 			this->Controls->Add(this->deleteButton);
 			this->Controls->Add(this->upgradeButton);
-			this->Controls->Add(this->cashButtonBig);
 			this->Controls->Add(this->pictureBox7);
 			this->Controls->Add(this->pictureBox1);
 			this->Font = (gcnew System::Drawing::Font(L"Haettenschweiler", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -673,6 +673,7 @@ namespace Visual2 {
 		this->cashLabel->Text = mySystemString;
 
 		cashGameForm = static_cast<int>(cash);
+		this->cashLabel->Text = cashGameForm.ToString() + "$";
 	}
 
 	private: System::Void GameForm_Resize(System::Object^ sender, System::EventArgs^ e) {
@@ -903,6 +904,136 @@ private: System::Void confirmBuyTurret_Click(System::Object^ sender, System::Eve
 	}
 	else{
 		
+	}
+
+}
+private: System::Void upgradeButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	System::String^ spotBuyInfo = selectSpotListBox->SelectedItem->ToString();
+	int spotBuyInfoInt = spotBuyInfo[6];
+
+	bool canUpgradeTurret = accionMenu3MejorarTorreta(spotBuyInfo, ptr);
+
+	cashGameForm = static_cast<int>(cash);
+	this->cashLabel->Text = cashGameForm.ToString() + "$";
+
+	if (canUpgradeTurret == 1) {
+
+		String^ imageName = "";
+		String^ imagePath1 = "";
+		String^ imagePath2 = "";
+
+		string turretBuyInfoString = valueTurretBuyInfo(spotBuyInfo);
+		const char* turretBuyInfoInt = turretBuyInfoString.c_str();
+		char turretBuyInfoChar = turretBuyInfoInt[0];
+
+		int turretLvlInfoInt = valueTurretLvlInfo(spotBuyInfo);
+
+		switch (turretBuyInfoChar) {
+		case 68:
+
+			imageName = "basic";
+			imagePath1 = "00_assets/" + imageName;
+			break;
+		case 83:
+
+			imageName = "shooter";
+			imagePath1 = "00_assets/" + imageName;
+			break;
+		case 66:
+
+			imageName = "supercanon";
+			imagePath1 = "00_assets/" + imageName;
+			break;
+		}
+
+		switch (turretLvlInfoInt) {
+		case 2:
+
+			imageName = "lvl2.png";
+			imagePath2 = imagePath1 + imageName;
+			break;
+		case 3:
+
+			imageName = "lvl3.png";
+			imagePath2 = imagePath1 + imageName;
+			break;
+		}
+
+		switch (spotBuyInfoInt) {
+		case 49:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			pictureBox2->Image = Image::FromFile(imagePath2);
+
+			break;
+		case 50:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			pictureBox3->Image = Image::FromFile(imagePath2);
+
+			break;
+		case 51:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			pictureBox4->Image = Image::FromFile(imagePath2);
+			break;
+		case 52:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			pictureBox5->Image = Image::FromFile(imagePath2);
+			break;
+		case 53:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			pictureBox6->Image = Image::FromFile(imagePath2);
+			break;
+		}
+	}
+
+}
+private: System::Void deleteButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	System::String^ spotBuyInfo = selectSpotListBox->SelectedItem->ToString();
+	int spotBuyInfoInt = spotBuyInfo[6];
+
+	int canDeleteTurret = accionMenu2EliminarTorreta(spotBuyInfo, ptr);
+
+	cashGameForm = static_cast<int>(cash);
+	this->cashLabel->Text = cashGameForm.ToString() + "$";
+
+	if (canDeleteTurret == 1) {
+
+		switch (spotBuyInfoInt) {
+		case 49:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			this->pictureBox2->Image = Image::FromFile("00_assets/earth_texture.png");
+
+			break;
+		case 50:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			this->pictureBox3->Image = Image::FromFile("00_assets/earth_texture.png");
+
+			break;
+		case 51:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			this->pictureBox4->Image = Image::FromFile("00_assets/earth_texture.png");
+			break;
+		case 52:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			this->pictureBox5->Image = Image::FromFile("00_assets/earth_texture.png");
+			break;
+		case 53:
+
+			// load the image from the file and assign it to the Image property of the PictureBox control
+			this->pictureBox6->Image = Image::FromFile("00_assets/earth_texture.png");
+			break;
+		}
+
 	}
 
 }
