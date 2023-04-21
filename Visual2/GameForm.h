@@ -456,6 +456,7 @@ namespace Visual2 {
 			this->Controls->Add(this->cashButtonSmall);
 			this->Controls->Add(this->selectTurretAndPosicionLabel);
 			this->Controls->Add(this->turretListBox);
+			this->turretListBox->SelectedIndex = 0;
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox6);
 			this->Controls->Add(this->pictureBox3);
@@ -468,6 +469,7 @@ namespace Visual2 {
 			this->Controls->Add(this->cashButtonBig);
 			this->Controls->Add(this->confirmBuyTurret);
 			this->Controls->Add(this->selectSpotListBox);
+			this->selectSpotListBox->SelectedIndex = 0;
 			this->Controls->Add(this->deleteButton);
 			this->Controls->Add(this->upgradeButton);
 			this->Controls->Add(this->pictureBox7);
